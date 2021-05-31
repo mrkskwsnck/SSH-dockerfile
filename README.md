@@ -1,26 +1,23 @@
 # SSH-dockerfile
 
-This Dockerfile creates an ssh service inside a docker container
+This Dockerfile creates a SSH service on top of Debian GNU/Linux inside a Docker Container.
 
+- Default `root`′s password is `TrustNo1`.
+- Default `user`′s password is `DivBy0`.
 
-![Docker](https://github.com/s1ntaxe770r/SSH-dockerfile/workflows/Docker/badge.svg)
-
-* default user and password is test
-
-i also wrote about why you'd want to do this here [here](https://dev.to/s1ntaxe770r/how-to-setup-ssh-within-a-docker-container-i5i)
-
+See [this](https://dev.to/s1ntaxe770r/how-to-setup-ssh-within-a-docker-container-i5i) blog article for why you′d want to do this.
 
 ## Building the image
 
+`docker build --tag debianssh-server .`
 
-` docker build -t IMAGE_NAME . ` 
+## Runing the image
 
-## Runing the image 
+`docker run --detach --publish 2222:22 debianssh-server`
 
-` docker run -p 22:22 IMAGE_NAME `
+## License
 
-
-## Or simply pull the image 
-
-`docker pull ghcr.io/s1ntaxe770r/image:latest`
-
+> Copying and distribution of this file, with or without modification,  
+> are permitted in any medium without royalty provided the copyright  
+> notice and this notice are preserved.  This file is offered as-is,  
+> without any warranty.
